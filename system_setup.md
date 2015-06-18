@@ -1,7 +1,7 @@
 # Setting up your Mac for Ruby development
 
 * Open Terminal. It's inside Apps > Utilities (or search for it).
-* Install [Homebrew](http://brew.sh)<sup><a href="#homebrew" id="homebrew_token">1</a></sup>.
+* Install [Homebrew](http://brew.sh)<sup><a href="#homebrew" id="homebrew-token">1</a></sup>.
 	* It'll ask you to download something else - Command Line Tools. Let it.
 * Install Ruby.
 	* `brew install ruby`
