@@ -1,7 +1,7 @@
 # Setting up your Mac for Ruby development
 
 * Open Terminal. It's inside Apps > Utilities (or search for it).
-* Install [Homebrew](http://brew.sh)[^homebrew].
+* Install [Homebrew](http://brew.sh)<sup><a href="#homebrew" id="homebrew_token">1</a></sup>.
 	* It'll ask you to download something else - Command Line Tools. Let it.
 * Install Ruby.
 	* `brew install ruby`
@@ -41,12 +41,9 @@ Paste and run the following in Terminal:
 
 ## Atom
 
-Nothing to see here. `atom` is magically already there all along. If, for some reason, it isn't[^atom-check] pasting the following into Terminal should do the trick:
+Nothing to see here. `atom` is magically already there all along. If, for some reason, it isn't<sup><a href="#atom-check" id="atom-check-token">2</a></sup> pasting the following into Terminal should do the trick:
 
 `ln -s /Applications/Atom.app/Contents/MacOS/Atom /usr/local/bin/atom`
-
-[^atom-check]: If you want to check, type `which atom` into Terminal.
-[^homebrew]: For a bit of background, homebrew is a "package manager" for OSX. Package managers are commonly found on Linux servers and operating system to make the installation of command line programs easier. On the Mac, homebrew does much the same thing.
 
 ### One other editor set up thing
 
@@ -67,7 +64,7 @@ Since many of you are also new to the Mac, I wanted to throw in some other helpf
 None of these are _required_, but they're nice-to-haves.
 
 * **An app launcher:** Hunting around your Mac for a particular application to open gets tedious fast. You can use the built-in Spotlight (typically available via `⌘-Space`). Or you can use a purpose-built app launcher like [Alfred](http://www.alfredapp.com). In general, I find specific app launchers like Alfred (generally available via `Command-Space`) a bit snappier and they tend to have additional features that you might find handy.
-* **A password manager:** Maybe by the end of class, you'll want to write your own (but I wouldn't recommend it). In the meantime, you're going to have a ton of passwords floating around and the typical options - one password for them all, or trying to remember them all - are both _horrible_. Password managers such as [1Password](https://agilebits.com/onepassword) (recommended, but pricey - $35-$50 depending on the breaks), [Dashlane](http://lp.dashlane.com/cjv2/?utm_source=adwords&utm_campaign=US_Search_Brand_Exact&utm_medium=15594053097&utm_term=dashlane&gclid=CPWqiLWyl8YCFQYuaQodm0MA1g) or [LastPass](https://lastpass.com)[^lastpass] will make your life _significantly_ better and much more secure.
+* **A password manager:** Maybe by the end of class, you'll want to write your own (but I wouldn't recommend it). In the meantime, you're going to have a ton of passwords floating around and the typical options - one password for them all, or trying to remember them all - are both _horrible_. Password managers such as [1Password](https://agilebits.com/onepassword) (recommended, but pricey - $35-$50 depending on the breaks), [Dashlane](http://lp.dashlane.com/cjv2/?utm_source=adwords&utm_campaign=US_Search_Brand_Exact&utm_medium=15594053097&utm_term=dashlane&gclid=CPWqiLWyl8YCFQYuaQodm0MA1g) or [LastPass](https://lastpass.com)<sup><a href="#lastpass" id="lastpass-token">3</a></sup> will make your life _significantly_ better and much more secure.
 * **A better Terminal:** The default Terminal application on your Mac is _fine_, really. But if you want to take it a step further, I can highly recommend [iTerm 2](https://www.iterm2.com). Bonus: It's _free_.
 * **Dropbox:** We technically don't need this for class, but you'll need it sooner or later (and it's handy to sync data between your Mac and iPhone apps down the road).
 
@@ -80,5 +77,8 @@ There is only a single application I'm going to ask you to _not install_ during 
 It's a fine app, but for class purposes, we want to learn Git from the bare metal. That way, said app makes more sense if you decide to use it later.
 
 
-
-[^lastpass]: A quick note on Lastpass: They were [recently hacked](https://blog.lastpass.com/2015/06/lastpass-security-notice.html/), but it's not quite as bad as it sounds since their encryption routines are seemingly strong enough that it would take attackers a very, very long time to crack even one set of passwords.
+<ul id="footnotes">
+	<li><a href="#homebrew-token" id="homebrew">1</a>: For a bit of background, homebrew is a "package manager" for OSX. Package managers are commonly found on Linux servers and operating system to make the installation of command line programs easier. On the Mac, homebrew does much the same thing. <a href="#homebrew-token">Back</a></li>
+	<li><a href="#atom-check-token" id="atom-check">2</a>: If you want to check, type `which atom` into Terminal. <a href="#atom-check-token">Back</a></li>
+	<li><a href="#lastpass-token" id="lastpass">3</a>: A quick note on Lastpass: They were <a href="https://blog.lastpass.com/2015/06/lastpass-security-notice.html/">recently hacked</a>, but it's not quite as bad as it sounds since their encryption routines are seemingly strong enough that it would take attackers a very, very long time to crack even one set of passwords. <a href="#lastpass-token">Back</a></li>
+</ul>
