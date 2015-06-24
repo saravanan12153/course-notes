@@ -49,6 +49,8 @@ Nothing to see here. `atom` is magically already there all along. If, for some r
 
 We're going to be working quite a bit with git, we're going to be writing a ton of commit messages along the way and it'll be handy to use our preferred text editor for creating those messages.
 
+In Terminal:
+
 #### Atom
 
 `git config --global core.editor "atom --wait"`
@@ -56,6 +58,24 @@ We're going to be working quite a bit with git, we're going to be writing a ton 
 #### Sublime Text
 
 `git config --global core.editor "subl -n -w"`
+
+## Finally, let's tweak our Terminal prompt a bit
+
+In class, it's going to be important that you know where you are in the filesystem before running commands. For instance: It's going to be a nightmare if you `git init` your home directory or `rm -f` (note: try not to do that) a directory you didn't intend.
+
+So, we're going to make your prompt display the entire path to the current directory as so:
+
+In Terminal (presumes Atom. If you went Sublime, use `subl` instead of `atom`):
+
+`atom ~/.bash_profile`
+
+In Atom (or Sublime), paste the following at the top of that file:
+
+```
+PS1='\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h\[`tput sgr0`\]:$PWD\n\$ '
+```
+
+Save, close and open a new Terminal window or tab to see the result.
 
 # Other Mac niceties
 
