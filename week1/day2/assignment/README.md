@@ -61,4 +61,4 @@ movies << {
 
 ### Nightmare Mode
 
-8. Sort our students into their rows in class.
+8. Sort our students into their rows in class. As in: `{row1: [], row2: [], row3: []}`. It should be noted: Do this programmatically, not by hand.
