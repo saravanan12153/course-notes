@@ -4,8 +4,6 @@
 
 Today, we're going to play around a bit with Arrays and Hashes, two key Ruby data structures.
 
-Oh, and we'll revisit FizzBuzz.
-
 ## Objectives
 
 * Write some Ruby
@@ -19,7 +17,7 @@ A [gist](http://gist.github.com) containing Ruby code. This one need not be run 
 
 ## Details
 
-### Easy Mode
+### Normal Mode
 
 1. Create an array of all of the students in our class. Assign it to a variable named "class".
 2. Find all the students whose first name is less than 5 characters
