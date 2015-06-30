@@ -19,7 +19,7 @@ A [gist](http://gist.github.com) containing Ruby code. This one need not be run 
 
 ### Normal Mode
 
-1. Create an array of all of the students in our class. Assign it to a variable named "class".
+1. Create an array of all of the students in our class. Assign it to a variable named "our_class".
 2. Find all the students whose first name is less than 5 characters
 3. Turn a sentence into an Array, and select the words that are four characters long. Here's your sentence: `sentence = "Ruby is actually kind of fun once you get used to it."`
 4. Create an array of movies with budgets of less than 100 and another array of movies that starred Leonard DiCaprio.
