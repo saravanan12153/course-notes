@@ -52,10 +52,10 @@ movies << {
   stars: ["Leonardo DiCaprio", "JGL"]
 }
 ```
-5. Make a method that will always return the words in a String that contain four characters. Called as: `four_words(text)`
 
 ### Hard Mode
 
+5. Make a method that will always return the words in a String that contain four characters. Called as: `four_words(text)`
 6. Make a method that will return the words in a String that are `x` characters long (as in: `how_many_words(text, num)`)
 7. What's the total budget of our movies?
 
