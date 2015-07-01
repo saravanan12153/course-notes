@@ -1,0 +1,699 @@
+movies = []
+movies << {
+  title: "Forest Gump",
+  budget: 55,
+  stars: ["Tom Hanks"]
+}
+movies << {
+  title: "Star Wars",
+  budget: 11,
+  stars: ["Mark Hamill", "Harrison Ford"]
+}
+movies << {
+  title: "Batman Begins",
+  budget: 150,
+  stars: ["Christian Bale", "Liam Neeson", "Michael Caine"]
+}
+movies << {
+  title: "Titanic",
+  budget: 200,
+  stars: ["Kate Winslet", "Leonardo DiCaprio"]
+}
+movies << {
+  title: "Inception",
+  budget: 160,
+  stars: ["Leonardo DiCaprio", "JGL"]
+}
+movies.collect{|movie| movie[:title] if movie[:stars].include?("Leonardo DiCaprio")}
+def four_words(text)
+  text.split(" ").select{|word| word.length == 4}
+end
+four_words("Playground fun is taxing on our brains. And some of our bodies")
+four_words("Astronauts like freeze dried ice cream some of the time.")
+"This is a sentence. This is another. I'm writing still more, sometimes, that is".split(" ")
+movies.collect{|movie| movie[:budget]}.inject(0){|sum, x| sum+x}
+movies.inject(0){|sum, movie| sum + movie[:budget]}
+rows = []
+students.each_slice(4){|row| rows << row}
+our_class = ["Caleb", "Andrew", "Alec", "Maggie", "Danny", "Dallie", "Emanuel", "Shane", "Pete", "Joe", "Tad"]
+students.each_slice(4){|row| rows << row}
+our_class.each_slice(4){|row| rows << row}
+rows
+rows = []
+our_class.each_slice(2){|row| rows << row}
+rows
+rows.length
+rows = []
+our_class.each_slice(3){|row| rows << row}
+rows
+rows = []
+our_class.each_slice(3){|row| row >> rows}
+our_class.each_slice(3).to_a
+our_class.each_slice(3).class
+our_class.each_slice(3).inspect
+our_class.each_slice(3).to_a
+our_class.each_slice(4).to_a
+our_class.sort
+our_class.sort_by{|name| name.length}
+our_class.sort_by{|name| name.length}.reverse
+"string".class
+"string".methods
+{our_hash: "Hey there"}
+{our_hash: "Hey there"}.class
+{our_hash: "Hey there"}.methods
+String.new("This seems silly")
+Hash.new
+Array.new
+class Person
+end
+Person.new
+person = Person.new
+person.methods
+person.object_id
+person2 = Person.new
+person2.object_id
+"this" == "this"
+person == person2
+person == person
+person.name
+person.name = "Chris"
+class Person
+  def name
+    @name
+  end
+
+end
+person = Person.new
+person.name
+person.name = "Chris"
+class Person
+  def name
+    @name
+  end
+
+  def name=(name)
+    @name = name
+  end
+
+end
+person = Person.new
+person.name
+person.name = "Chris"
+person.inspect
+class Person
+  attr_accessor :height
+  def name
+    @name
+  end
+  def name=(name)
+    @name = name
+  end
+end
+person = Person.new
+person.name = "Chris"
+person.height
+person.height = 6*12
+person.inspect
+class Person
+  attr_accessor :height, :name
+end
+person = Person.new
+person.name
+person.name = "Chris"
+person.height = 6*12
+person
+class Person
+  attr_accessor :height, :name, :weight, :eye_color
+end
+person = Person.new
+person = Person.new(:name => "Chris")
+class Person
+  attr_accessor :height, :name, :weight, :eye_color
+  def initialize(name, height, weight, eye_color)
+    @name = name
+    @height = height
+    @weight = weight
+    @eye_color = eye_color
+  end
+end
+person = Person.new("Chris")
+person = Person.new("Chris", 72, 180, "Blue")
+class Person
+  attr_accessor :height,
+  :name,
+  :weight,
+  :eye_color,
+  :number_of_arms,
+  :number_of_legs
+  def initialize(name, height, weight, eye_color, number_of_arms=2, number_of_legs=2)
+    @name = name
+    @height = height
+    @weight = weight
+    @eye_color = eye_color
+  end
+end
+person = Person.new("Chris", 72, 180, "Blue")
+person.number_of_arms
+class Person
+  attr_accessor :height,
+  :name,
+  :weight,
+  :eye_color,
+  :number_of_arms,
+  :number_of_legs
+  def initialize(name, height, weight, eye_color, number_of_arms=2, number_of_legs=2)
+    @name = name
+    @height = height
+    @weight = weight
+    @eye_color = eye_color
+    @number_of_arms = number_of_arms
+    @number_of_legs = number_of_legs
+  end
+end
+person = Person.new("Chris", 72, 180, "Blue")
+person.number_of_arms
+person.number_of_legs
+class Person
+  attr_accessor :height,
+  :name,
+  :weight,
+  :eye_color,
+  :number_of_arms,
+  :number_of_legs
+  def initialize(name, height, weight, eye_color, number_of_arms=2, number_of_legs=2)
+    @name = name
+    @height = height
+    @weight = weight
+    @eye_color = eye_color
+    @number_of_arms = number_of_arms
+    @number_of_legs = number_of_legs
+  end
+  def walk(number_of_steps=10)
+    "I walked #{number_of_steps} just this second."
+  end
+end
+person = Person.new("Chris", 72, 180, "Blue")
+person.walk
+person.walk(1000)
+class Person
+  attr_accessor :height,
+  :name,
+  :weight,
+  :eye_color,
+  :number_of_arms,
+  :number_of_legs
+  def initialize(name, height, weight, eye_color, number_of_arms=2, number_of_legs=2)
+    @name = name
+    @height = height
+    @weight = weight
+    @eye_color = eye_color
+    @number_of_arms = number_of_arms
+    @number_of_legs = number_of_legs
+  end
+  def walk(number_of_steps=10)
+    "I would walk #{number_of_steps} miles."
+  end
+end
+person = Person.new("Chris", 72, 180, "Blue")
+person.walk
+person.walk("10,000")
+class Kid < Person
+
+end
+kid = Kid.new("Benjamin", 4*12, 60, "Hazel")
+kid
+person
+class Person
+  attr_accessor :height,
+  :name,
+  :weight,
+  :eye_color,
+  :number_of_arms,
+  :number_of_legs
+  def initialize(name, age, height, weight, eye_color, number_of_arms=2, number_of_legs=2)
+    @name = name
+    @height = height
+    @weight = weight
+    @eye_color = eye_color
+    @number_of_arms = number_of_arms
+    @number_of_legs = number_of_legs
+    @age = age
+  end
+  def walk(number_of_steps=10)
+    "I would walk #{number_of_steps} miles."
+  end
+end
+class Kid < Person
+
+  def walk(number_of_steps=10)
+    if @age < 3
+      "I don't walk yet. Maybe try #crawl?"
+    else
+      super(number_of_steps)
+    end
+  end
+
+end
+kid = Kid.new("Benjamin", 4*12, 60, "Hazel")
+kid = Kid.new("Benjamin", 2, 4*12, 60, "Hazel")
+kid.walk
+class Kid < Person
+
+  def walk(number_of_steps=10)
+    if @age < 3
+      "I don't walk yet. Maybe try #crawl?"
+    else
+      super(number_of_steps)
+    end
+  end
+
+  def crawl(number_of_steps=3)
+    "I crawled #{number_of_steps}, and then drooled on your carpet."
+  end
+
+end
+kid = Kid.new("Benjamin", 2, 4*12, 60, "Hazel")
+kid.walk
+kid.crawl
+kid.crawl(12)
+class Kid < Person
+  def walk(number_of_steps=10)
+    if @age < 3
+      crawl(number_of_steps)
+    else
+      super(number_of_steps)
+    end
+  end
+  def crawl(number_of_steps=3)
+    "I crawled #{number_of_steps}, and then drooled on your carpet."
+  end
+end
+kid = Kid.new("Benjamin", 2, 4*12, 60, "Hazel")
+kid.walk(90)
+kid.age = 23
+class Person
+  attr_accessor :height,
+  :name,
+  :weight,
+  :eye_color,
+  :number_of_arms,
+  :number_of_legs,
+  :age
+  def initialize(name, age, height, weight, eye_color, number_of_arms=2, number_of_legs=2)
+    @name = name
+    @height = height
+    @weight = weight
+    @eye_color = eye_color
+    @number_of_arms = number_of_arms
+    @number_of_legs = number_of_legs
+    @age = age
+  end
+  def walk(number_of_steps=10)
+    "I would walk #{number_of_steps} miles."
+  end
+end
+class Kid < Person
+  def walk(number_of_steps=10)
+    if @age < 3
+      crawl(number_of_steps)
+    else
+      super(number_of_steps)
+    end
+  end
+  def crawl(number_of_steps=3)
+    "I crawled #{number_of_steps}, and then drooled on your carpet."
+  end
+end
+kid = Kid.new("Benjamin", 3, 4*12, 80)
+kid = Kid.new("Benjamin", 3, 4*12, 80, "Hazel")
+kid.walk(12)
+kid.age = 2
+kid.walk(12)
+kid.age = 23
+kid.walk(12)
+kid.name = "Ace"
+kid.number_of_legs = 1
+kid.number_of_arms = 3
+kid.weight = 280
+kid
+kid.height = 6*12
+kid
+kid.walk(23)
+class Kid < Person
+  attr_accessor :walking?
+  def walk(number_of_steps=10)
+    if @age < 3
+      crawl(number_of_steps)
+    else
+      super(number_of_steps)
+    end
+  end
+  def crawl(number_of_steps=3)
+    "I crawled #{number_of_steps}, and then drooled on your carpet."
+  end
+end
+class Kid < Person
+  attr_accessor "walking?".to_sym
+  def walk(number_of_steps=10)
+    if @age < 3
+      crawl(number_of_steps)
+    else
+      super(number_of_steps)
+    end
+  end
+  def crawl(number_of_steps=3)
+    "I crawled #{number_of_steps}, and then drooled on your carpet."
+  end
+end
+class Kid < Person
+  def walking?
+    @walking
+  end
+  def walking=(boolean)
+    @walking = boolean
+  end
+  def walk(number_of_steps=10)
+    if @age < 3
+      crawl(number_of_steps)
+    else
+      super(number_of_steps)
+    end
+  end
+  def crawl(number_of_steps=3)
+    "I crawled #{number_of_steps}, and then drooled on your carpet."
+  end
+end
+daughter = Kid.new("Lauren", 2, 3*12, 40, "Hazel")
+daughter.walking?
+daughter.walking = true
+daughter.walking?
+daughter
+class Kid < Person
+  def walking?
+    @walking || true
+  end
+  def walking=(boolean)
+    @walking = boolean
+  end
+  def walk(number_of_steps=10)
+    if @age < 3
+      crawl(number_of_steps)
+    else
+      super(number_of_steps)
+    end
+  end
+  def crawl(number_of_steps=3)
+    "I crawled #{number_of_steps}, and then drooled on your carpet."
+  end
+end
+daughter = Kid.new("Lauren", 2, 3*12, 40, "Hazel")
+daughter.walking?
+daughter.walking = false
+daughter.walking?
+class Kid < Person
+  def walking?
+    if @walking.nil?
+      true
+    else
+      @walking
+    end
+  end
+  def walking=(boolean)
+    @walking = boolean
+  end
+  def walk(number_of_steps=10)
+    if @age < 3
+      crawl(number_of_steps)
+    else
+      super(number_of_steps)
+    end
+  end
+  def crawl(number_of_steps=3)
+    "I crawled #{number_of_steps}, and then drooled on your carpet."
+  end
+end
+daughter = Kid.new("Lauren", 2, 3*12, 40, "Hazel")
+daughter.walking?
+daughter.walking = false
+daughter.walking?
+class Person
+  attr_accessor :height,
+  :name,
+  :weight,
+  :eye_color,
+  :number_of_arms,
+  :number_of_legs,
+  :age
+  def initialize(name, age, height, weight, eye_color, number_of_arms=2, number_of_legs=2)
+    @name = name
+    @height = height
+    @weight = weight
+    @eye_color = eye_color
+    @number_of_arms = number_of_arms
+    @number_of_legs = number_of_legs
+    @age = age
+  end
+  def self.make_babies(number=2)
+    kids = []
+    number.times do |num|
+      kids << Kid.new("Kid #{num}", 0.1, 18, 3, "Blue")
+    end
+    kids
+  end
+  def walk(number_of_steps=10)
+    "I would walk #{number_of_steps} miles."
+  end
+end
+class Kid < Person
+  def walking?
+    if @walking.nil?
+      if @age < 3
+        false
+      else
+        true
+      end
+    else
+      @walking
+    end
+  end
+  def walking=(boolean)
+    @walking = boolean
+  end
+  def walk(number_of_steps=10)
+    if @age < 3
+      crawl(number_of_steps)
+    else
+      super(number_of_steps)
+    end
+  end
+  def crawl(number_of_steps=3)
+    "I crawled #{number_of_steps}, and then drooled on your carpet."
+  end
+end
+Person.make_babies(4)
+Person.make_babies(8)
+Person.kids
+class Person
+  attr_accessor :height,
+  :name,
+  :weight,
+  :eye_color,
+  :number_of_arms,
+  :number_of_legs,
+  :age
+  def initialize(name, age, height, weight, eye_color, number_of_arms=2, number_of_legs=2)
+    @name = name
+    @height = height
+    @weight = weight
+    @eye_color = eye_color
+    @number_of_arms = number_of_arms
+    @number_of_legs = number_of_legs
+    @age = age
+  end
+  def self.make_babies(number=2)
+    @@kids = []
+    number.times do |num|
+      @@kids << Kid.new("Kid #{num}", 0.1, 18, 3, "Blue")
+    end
+    @@kids
+  end
+  def self.kids
+    @@kids || []
+  end
+  def walk(number_of_steps=10)
+    "I would walk #{number_of_steps} miles."
+  end
+end
+class Kid < Person
+  def walking?
+    if @walking.nil?
+      if @age < 3
+        false
+      else
+        true
+      end
+    else
+      @walking
+    end
+  end
+  def walking=(boolean)
+    @walking = boolean
+  end
+  def walk(number_of_steps=10)
+    if @age < 3
+      crawl(number_of_steps)
+    else
+      super(number_of_steps)
+    end
+  end
+  def crawl(number_of_steps=3)
+    "I crawled #{number_of_steps}, and then drooled on your carpet."
+  end
+end
+Person.make_babies(4)
+Person.kids
+class Person
+  attr_accessor :height,
+  :name,
+  :weight,
+  :eye_color,
+  :number_of_arms,
+  :number_of_legs,
+  :age
+  def initialize(name, age, height, weight, eye_color, number_of_arms=2, number_of_legs=2)
+    @name = name
+    @height = height
+    @weight = weight
+    @eye_color = eye_color
+    @number_of_arms = number_of_arms
+    @number_of_legs = number_of_legs
+    @age = age
+  end
+  def self.make_babies(number=2)
+    @@kids = []
+    number.times do |num|
+      @@kids << Kid.new("Kid #{num}", 0.1, 18, 3, "Blue")
+    end
+    @@kids
+  end
+  def self.kids
+    @@kids || []
+  end
+
+  def kids
+    self.class.kids
+  end
+  def walk(number_of_steps=10)
+    "I would walk #{number_of_steps} miles."
+  end
+end
+class Kid < Person
+  def walking?
+    if @walking.nil?
+      if @age < 3
+        false
+      else
+        true
+      end
+    else
+      @walking
+    end
+  end
+  def walking=(boolean)
+    @walking = boolean
+  end
+  def walk(number_of_steps=10)
+    if @age < 3
+      crawl(number_of_steps)
+    else
+      super(number_of_steps)
+    end
+  end
+  def crawl(number_of_steps=3)
+    "I crawled #{number_of_steps}, and then drooled on your carpet."
+  end
+end
+Person.make_babies(3)
+person = Person.new("Chris", 23, 45, 23, "Blue")
+person.kids
+person = Person.new("Chuck", 23, 45, 67, "Brown")
+person.kids
+Person
+person
+String
+string = String.new("whatever")
+Person.inspect
+Person.variables
+Person.methods
+perosn.methods
+person.methods
+kid = Kid.new("Eleanor", 2, 3, 4, "Red")
+kid.kids
+kid
+kid.class
+kid.superclass
+kid.super_class
+kid.parent
+kid.methods
+kid.singleton_class
+kid
+Kid.instance_variables
+kid.instance_variables
+kid.age
+class Person
+  attr_accessor :height,
+  :name,
+  :weight,
+  :eye_color,
+  :number_of_arms,
+  :number_of_legs,
+  :age,
+  :number_of_eyes
+
+  def number_of_eyes
+    @number_of_eyes
+  end
+
+  def number_of_eyes=(num)
+    @number_of_eyes = num
+  end
+  attr_reader :organic
+  def initialize(name, age, height, weight, eye_color, number_of_arms=2, number_of_legs=2)
+    @name = name
+    @height = height
+    @weight = weight
+    @eye_color = eye_color
+    @number_of_arms = number_of_arms
+    @number_of_legs = number_of_legs
+    @age = age
+    @organic = true
+  end
+  def self.make_babies(number=2)
+    @@kids = []
+    number.times do |num|
+      @@kids << Kid.new("Kid #{num}", 0.1, 18, 3, "Blue")
+    end
+    @@kids
+  end
+  def self.kids
+    @@kids || []
+  end
+  def kids
+    self.class.kids
+  end
+  def walk(number_of_steps=10)
+    "I would walk #{number_of_steps} miles."
+  end
+end
+person = Person.new("Chris" 2,3,4,"Blue")
+person = Person.new("Chris", 2,3,4,"Blue")
+person.organic
+person.organic = false
+"stringer".class
+2.class
+Class.class
+Person.class
+"you all rock!".length
+10.days.ago
+10.class
+exit
