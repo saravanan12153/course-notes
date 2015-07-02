@@ -1,0 +1,285 @@
+puts "================ Thursday, July 2, 2015 ================="
+class Robot
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+
+  def name
+    "Robot #{@name}"
+  end
+
+  def say_hi
+    "Hi!"
+  end
+
+  def say_name
+    "My name is #{name}"
+  end
+end
+robot = Robot.new("Bender")
+robot.name
+robot.say_name
+class Robot
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+
+  def name
+    "Robot King #{@name}"
+  end
+
+  def say_hi
+    "Hi!"
+  end
+
+  def say_name
+    "My name is #{name}"
+  end
+end
+robot = Robot.new("Bender")
+robot.name
+robot.name = "R2D2"
+robot.name
+class BendingUnit < Robot
+
+  # A bending unit instance has a method called 'bend'
+  # The bend method has one argument 'object_to_bend'
+  # The bend method should put to the console "Bend X!" where X is object_to_bend
+  def bend(object_to_bend)
+    "Bend #{object_to_bend}!"
+  end
+
+end
+class ActorUnit < Robot
+
+  def change_name(change_name)
+    name = change_name
+  end
+
+end
+actor = ActorUnit.new("Leonard Nimoy")
+actor.change_name("Spock")
+actor.name
+class ActorUnit < Robot
+
+  def change_name(change_name)
+    self.name = change_name
+  end
+
+end
+actor = ActorUnit.new("Leonard Nimoy")
+actor.name
+actor.change_name("Spock")
+actor.name
+class Factory
+  def self.build_robots(array)
+    array.collect{|name| Robot.new(name)}
+  end
+end
+Factory.build_robots(["Chris", "Pam", "Benjamin", "Lauren"])
+class Factory
+  def self.build_robots(array)
+    array.collect{|name| Robot.new(name, Random.rand(50))}
+  end
+end
+Factory.build_robots(["Chris", "Pam", "Benjamin", "Lauren"])
+class Robot
+  attr_accessor :name,
+  :height
+  def initialize(name, height=10)
+    @name = name
+    @height = height
+  end
+  def name
+    "Robot King #{@name}"
+  end
+  # A robot instance should have a method called 'say_hi' and it should return "Hi!"
+  def say_hi
+    "Hi!"
+  end
+  # A robot instance should have a method called 'say_name' and it should return "My name is X" where X is the robot's name
+  def say_name
+    "My name is #{name}"
+  end
+end
+Factory.build_robots(["Chris", "Pam", "Benjamin", "Lauren"])
+class Factory
+  def self.build_robots(array)
+    array.collect{|name| Robot.new(name, Random.new.rand(5..50))}
+  end
+end
+Factory.build_robots(["Chris", "Pam", "Benjamin", "Lauren"])
+Factory.class
+our_class = Factory
+our_class.build_robots(["Luck"])
+class Factory
+  def self.build_robots(array)
+    types_of_robots = [Robot, BendingUnit, ActorUnit]
+    array.collect{|name| types_of_robots.sample.new(name, Random.new.rand(5..50))}
+  end
+end
+Factory.build_robots(["Chris", "Pam", "Benjamin", "Lauren"])
+class Factory
+  def self.build_robots(array)
+    array.collect{|name| random_robot_class.new(name, Random.new.rand(5..50))}
+  end
+  def self.random_robot_class
+    types_of_robots = [Robot, BendingUnit, ActorUnit]
+    types_of_robots.sample
+  end
+end
+Factory.build_robots(["Chris", "Pam", "Benjamin", "Lauren"])
+our_class
+our_class = ["Caleb", "Andrew", "Alec", "Maggie", "Danny", "Dallie", "Emanuel", "Shane", "Pete", "Joe", "Tad"]
+our_class.collect{|name| self.inspect}
+exit
+require 'faker'
+Faker::Name.name
+Faker::Name.first_name
+class Factory
+  ROBOT_TYPES = [Robot, BendingUnit, ActorUnit]
+  def self.build_robots(array)
+    array.collect{|name| random_robot_class.new(name, Random.new.rand(5..50))}
+  end
+  def self.random_robot_class
+    ROBOT_TYPES.sample
+  end
+
+  def self.build_random_robots(num=1000)
+    names = []
+    num.times.do
+    names << Faker::Name.first_name
+  end
+  build_robots(names)
+end
+class Robot
+  attr_accessor :name,
+  :height
+  def initialize(name, height=10)
+    @name = name
+    @height = height
+  end
+  def name
+    "Robot King #{@name}"
+  end
+  # A robot instance should have a method called 'say_hi' and it should return "Hi!"
+  def say_hi
+    "Hi!"
+  end
+  # A robot instance should have a method called 'say_name' and it should return "My name is X" where X is the robot's name
+  def say_name
+    "My name is #{name}"
+  end
+end
+class BendingUnit < Robot
+  # A bending unit instance has a method called 'bend'
+  # The bend method has one argument 'object_to_bend'
+  # The bend method should put to the console "Bend X!" where X is object_to_bend
+  def bend(object_to_bend)
+    "Bend #{object_to_bend}!"
+  end
+end
+class ActorUnit < Robot
+  # An ActorUnit instance has a method called 'change_name'
+  # The 'change_name' method accepts an argument 'new_name'
+  # The 'change_name' method changes the name property of the robot to 'new_name'
+  def change_name(change_name)
+    self.name = change_name
+  end
+end
+class Factory
+  ROBOT_TYPES = [Robot, BendingUnit, ActorUnit]
+  def self.build_robots(array)
+    array.collect{|name| random_robot_class.new(name, Random.new.rand(5..50))}
+  end
+  def self.random_robot_class
+    ROBOT_TYPES.sample
+  end
+
+  def self.build_random_robots(num=1000)
+    names = []
+    num.times.do
+    names << Faker::Name.first_name
+  end
+  build_robots(names)
+end
+class Factory
+  ROBOT_TYPES = [Robot, BendingUnit, ActorUnit]
+  def self.build_robots(array)
+    array.collect{|name| random_robot_class.new(name, Random.new.rand(5..50))}
+  end
+  def self.random_robot_class
+    ROBOT_TYPES.sample
+  end
+
+  def self.build_random_robots(num=1000)
+    names = []
+    num.times.do
+    names << Faker::Name.first_name
+  end
+  build_robots(names)
+end
+class Factory
+  ROBOT_TYPES = [Robot, BendingUnit, ActorUnit]
+  def self.build_robots(array)
+    array.collect{|name| random_robot_class.new(name, Random.new.rand(5..50))}
+  end
+  def self.random_robot_class
+    ROBOT_TYPES.sample
+  end
+  def self.build_random_robots(num=1000)
+    names = []
+    num.times do
+      names << Faker::Name.first_name
+    end
+    build_robots(names)
+  end
+end
+Factory.build_random_robots(10)
+Factory.build_random_robots(100)
+exit
+CSV
+require 'csv'
+CSV
+CSV.methods
+CSV.new
+our_csv = CSV.new('sample.csv')
+our_csv.methods
+our_csv.each do |row|
+  puts row
+end
+our_csv.each_row do |row|
+  puts row
+end
+CSV.foreach('sample.csv', :headers => true) do |row|
+  puts row.inspect
+end
+CSV.foreach('sample.csv', :headers => true) do |row|
+  puts row["Name"]
+end
+CSV.foreach('sample.csv', :headers => true) do |row|
+  puts row[2]
+end
+CSV.foreach('sample.csv', :headers => true).collect{|u| u["Name"]}
+our_csv = CSV.foreach('sample.csv')
+our_csv.each do |row|
+  puts row.inspect
+end
+our_csv = CSV.foreach('sample.csv', :headers => true)
+our_csv.each do |row|
+  puts row.inspect
+end
+exit
+require 'csv'
+CSV.foreach("sample.csv", headers: true) do |row|
+  puts row.inspect # replace with your logic
+end
+exit
+string = "Our string of letters"
+string[4]
+string[12]
+string[4..12]
+string[4...12]
+exit
