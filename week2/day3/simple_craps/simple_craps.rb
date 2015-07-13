@@ -7,10 +7,50 @@ class SimpleCraps
     num.times.collect{|_num| Dice.new}
   end
 
+  def self.statistics
+    unless defined?(@@statistics)
+      @@statistics = {wins: [], losses: []}
+    end
+    @@statistics
+  end
+
+  def self.run_stats
+    bulk_play
+    puts "You won #{statistics[:wins].length} times."
+    puts "The house won #{statistics[:losses].length} times."
+  end
+
+  def self.bulk_play(num=1000000)
+    die = Dice.new
+    num.times do |num|
+      value1 = 0
+      value2 = 0
+      first_total = 0
+      roll_counter = 0
+      first_time = true
+      until winning_time?(first_total, value1, value2, first_time) || losing_time?(first_total, value1, value1, first_time)
+        roll_counter += 1
+        value1, value2 = 2.times.collect{|_num| die.roll}
+        first_total = value1 + value2 if first_time
+        if losing_time?(first_total, value1, value2, first_time)
+          statistics[:losses] << roll_counter
+          break
+        end
+        if winning_time?(first_total, value1, value2, first_time)
+          statistics[:wins] << roll_counter
+          break
+        end
+        first_time = false
+        value1 = 0
+        value2 = 0
+      end
+    end
+  end
+
   def self.play
     die = Dice.new
     puts "Welcome to our table. Take your first roll (any key)."
-    gets
+    $stdin.gets
     value1 = 0
     value2 = 0
     first_total = 0
@@ -36,7 +76,7 @@ class SimpleCraps
         value2 = 0
         first_time = false
       end
-      gets
+      $stdin.gets
     end
 
   end
@@ -85,4 +125,8 @@ class SimpleCraps
 
 end
 
-SimpleCraps.play
+if ARGV[0] == "stats"
+  SimpleCraps.run_stats
+else
+  SimpleCraps.play
+end
