@@ -13,7 +13,7 @@ After completing this assignment, you should understand
 ## Details
 
 ### Deliverables
-* [An issue in the class repo](https://github.com/tiy-chs-ruby/assignments-june-2015) titled `3.2 - Responsivize -- YOUR NAME` with checkboxes as below under _Requirements_.
+* [An issue in the class repo](https://github.com/tiy-indianapolis-ror-june2015/assignments/issues) titled `3.2 - Responsivize -- YOUR NAME` with checkboxes as below under _Requirements_.
 * A repository named `3.2-Responsivize` containing at least a `README.md` file
 * A Pull Request (PR) in your `3.2-Responsivize` repo:
   * _from_ branch `dev`
