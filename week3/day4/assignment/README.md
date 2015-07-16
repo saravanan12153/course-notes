@@ -28,10 +28,12 @@ After completing this assignment, you be able to effectively use
 
 ### Deliverables
 
+* An issue in the [assignment repo](https://github.com/tiy-indianapolis-ror-june2015/assignments) titled: "Week 3 Lab: <YOUR NAME>"
 * A repo containing at least:
   * `index.html`
   * 'styles.css'
   * 'images/'
+* A link to said repo in the comment of the aforementioned assignment repo. _(It's repos all the way down, folks)_
 
 
 
@@ -51,6 +53,11 @@ Using the image located `assets/surf-and-paddle.png`, create a html document usi
 Have fun with it.
 
 ... and remember: Think in terms of _boxes_.
+
+Some additional resources:
+
+* **Placeholder images:** https://placekitten.com/, http://placebacon.net/, http://lorempixel.com/, http://p-hold.com/
+* Lorem Ipsum ... we covered some of these on Day One. In fact: You should have a generator for this floating around somewhere ...
 
 ## Hard Mode
 
