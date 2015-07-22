@@ -26,7 +26,7 @@ Let's make some new pages in our Rails app and link to them. Also: let's explore
 ### Requirements
 
 * At least two controllers with one action each.
-* The views between those views should use `link_to`
+* The views between those views should use `link_to` to link between them
 * Use bootstrap (using the CDN method below) to make it not look like default HTML rendering.
 * The views should each have a local image, served via the asset pipeline and using `image_tag`
 
