@@ -31,7 +31,13 @@ After completing this assignment, you be able to effectively use
 
 ### Deliverables
 
-* A repo containing at least a Rails 4.2 application
+* [An issue in the class repo](https://github.com/tiy-indianapolis-ror-june2015/assignments/issues) titled `Week 4 Lab - Surf-n-Paddle Rails -- YOUR NAME`.
+* A repository named `SurfnPaddleRails` containing at least a `README.md` file
+* A Pull Request (PR) in your `SurfnPaddleRails` repo:
+  * _from_ branch `dev`
+  * _into_ branch master
+* A comment on your original Issue with a link to your PR
+* Said issue assigned to me, @dummied
 
 ### Requirements
 
