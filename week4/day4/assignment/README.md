@@ -48,8 +48,8 @@ After completing this assignment, you be able to effectively use
   * Images and styles should be handled via the asset pipeline.
 
 2. Make the pages dynamic, where:  
-  * The root page shows the latest post
-  * The images at the bottom of the page link link to that post
+  * The root page shows the latest post (Note: Latest post will be the most-recent created_at date)
+  * The images at the bottom of the page link to that post
   * When viewing that post (URL will be /posts/:id) it shows that
   post
 
@@ -61,7 +61,9 @@ After completing this assignment, you be able to effectively use
 
 3. All the nav, header and footer items should work
 
-4. Change our posts so that they can also have a specific image (and method) associated with each object (ala. post.image == "whatever.jpg"). Use that to manage the images should in the views.
+4. Change our posts so that they can also have a specific image (and method) associated with each object (ala. post.image == "whatever.jpg"). Use that to manage the images that should in the views.
+
+5. Have the posts at the bottom be ordered by created_at (Most recent on the left, to oldest on the right)
 
 ## Nightmare Mode
 
