@@ -63,7 +63,7 @@ After completing this assignment, you be able to effectively use
 
 4. Change our posts so that they can also have a specific image (and method) associated with each object (ala. post.image == "whatever.jpg"). Use that to manage the images that should in the views.
 
-5. Have the posts at the bottom be ordered by created_at (Most recent on the left, to oldest on the right)
+5. Have the posts at the bottom be ordered by created_at (Most recent on the left, to oldest on the right). This list _shouldn't_ include the post being displayed in the main area (on the front, the most recent post shouldn't be there. On Post show pages, the post being shown shouldn't be there)
 
 ## Nightmare Mode
 
