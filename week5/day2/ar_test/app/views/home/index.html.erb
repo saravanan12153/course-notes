@@ -1,0 +1,10 @@
+<ul>
+<% @post.comments.each do |comment| %>
+  <li>
+    <blockquote>
+      <%= comment.body %>
+    </blockquote>
+    <cite><%= comment.user.name %></cite>
+  </li>
+<% end %>
+</ul>
