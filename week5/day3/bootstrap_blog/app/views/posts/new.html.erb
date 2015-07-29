@@ -1,0 +1,11 @@
+<%= content_for :header do %>
+  <%= render :partial => "header",
+  :locals => {
+    :hed => "Write an awsome post",
+    :subhed => "Mash the button and we'll post it for you<script></script>"
+  } %>
+<% end %>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', posts_path %>

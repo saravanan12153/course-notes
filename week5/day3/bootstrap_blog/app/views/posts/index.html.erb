@@ -1,0 +1,20 @@
+<%= content_for :header do %>
+  <%= render "header" %>
+<% end %>
+
+<% @posts.each do |post| %>
+  <div class="post-preview">
+      <a href="<%= post_path(:id => post.id) %>">
+      <!-- <a href="<%= url_for(:controller => "posts", :action => "show", :id => post.id) %>"> -->
+          <h2 class="post-title">
+              <!-- <%= link_to post.title, post_path(:id => post.id) %> -->
+              <%= post.title %>
+          </h2>
+          <h3 class="post-subtitle">
+              <%= post.summary %>
+          </h3>
+      </a>
+      <p class="post-meta">Posted by <a href="#"><%= post.author.name %></a> on <%= post.created_at.strftime('%B %d, %Y') %></p>
+  </div>
+  <hr/>
+<% end %>

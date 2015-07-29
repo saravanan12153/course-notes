@@ -1,0 +1,9 @@
+<%= content_for :header do %>
+  <h1><%= @post.title %></h1>
+  <hr class="small">
+  <span class="subheading"><%= @post.summary %></span>
+<% end %>
+
+<%= simple_format(@post.body) %>
+
+<p>Posted by <%= @post.author.name %> <%= time_ago_in_words(@post.created_at) %> ago.</p>
