@@ -1,0 +1,14 @@
+<td><%= link.votes.sum(:value) %></td>
+<% if current_user.upvoted?(link) %>
+  <td></td>
+  <td><%= link_to "Downvote", link_vote_path(link, current_user.vote(link), :value => -1), :method => :put %></td>
+<% elsif current_user.downvoted?(link) %>
+  <td><%= link_to "Upvote", link_vote_path(link, current_user.vote(link), :value => 1), :method => :put %></td>
+  <td></td>
+<% elsif !current_user.voted?(link) %>
+  <td><%= link_to "Upvote", link_votes_path(link, :value => 1), :method => :post %></td>
+  <td><%= link_to "Downvote", link_votes_path(link, :value => -1), :method => :post %></td>
+<% else %>
+  <td><%= link_to "Upvote", link_vote_path(link, current_user.vote(link), :value => 1), :method => :put %></td>
+  <td><%= link_to "Downvote", link_vote_path(link, current_user.vote(link), :value => -1), :method => :put %></td>
+<% end %>
