@@ -16,7 +16,7 @@ What's Reddit without a thriving community of miscreants? Let's add comments! Wh
 
 * [An issue in the class repo](https://github.com/tiy-indianapolis-ror-june2015/assignments/issues) titled `Week 6, Day 1 - moar reddit - <YOUR_NAME>`.
 * A closed pull request (from `moar` to `master`) containing today's work
-* A comment on that issue when you're done that has the link to the app on heroku and a link to the aforementioned pull request
+* A comment on that issue when you're done that has the link to the _updated_ (not new) app on heroku and a link to the aforementioned pull request
 * Said issue closed and assigned to me @dummied
 
 ### Requirements
