@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   devise_for :users
   resources :subreddits do
     resources :links
@@ -6,6 +7,9 @@ Rails.application.routes.draw do
   resources :links do
     resources :votes, :only => [:create, :update]
   end
+
+  get 'links/:id/redirect' => 'links#redirect', :as => :link_redirect
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

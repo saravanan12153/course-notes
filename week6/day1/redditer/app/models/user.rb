@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :links
   has_many :votes
+  has_many :comments
 
   def upvoted?(link)
     if vote(link) && vote(link).value == 1

@@ -6,15 +6,16 @@ class LinksController < ApplicationController
   def index
     if params[:subreddit_id]
       @subreddit = Subreddit.where(:name => params[:subreddit_id]).first
-      @links = @subreddit.links.all
+      @links = @subreddit.links.order("vote_total DESC")
     else
-      @links = Link.all
+      @links = Link.order("vote_total DESC")
     end
   end
 
   # GET /links/1
   # GET /links/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /links/new
@@ -65,6 +66,15 @@ class LinksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def redirect
+    @link = Link.find(params[:id])
+    if current_user
+      @link.vote(1, current_user)
+    end
+    redirect_to @link.url
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

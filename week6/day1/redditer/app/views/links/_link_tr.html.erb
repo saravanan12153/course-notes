@@ -1,0 +1,11 @@
+<tr>
+  <%= render :partial => 'votinglinks', :locals => {:link => link_tr} %>
+  <td><%= link_tr.comments.count %></td>
+  <td><%= link_tr.summary %></td>
+  <td><%= link_to link_tr.title, link_redirect_path(link_tr) %></td>
+  <td><%= link_tr.user_id %></td>
+  <td><%= link_tr.subreddit_id %></td>
+  <td><%= link_to 'Show', link_tr %></td>
+  <td><%= link_to 'Edit', edit_link_path(link_tr) %></td>
+  <td><%= link_to 'Destroy', link_tr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

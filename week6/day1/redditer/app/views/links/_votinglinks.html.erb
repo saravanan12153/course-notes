@@ -1,4 +1,4 @@
-<td><%= link.votes.sum(:value) %></td>
+<td><%= link.vote_total %></td>
 <% if current_user.upvoted?(link) %>
   <td></td>
   <td><%= link_to "Downvote", link_vote_path(link, current_user.vote(link), :value => -1), :method => :put %></td>

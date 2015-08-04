@@ -1,0 +1,8 @@
+<div class="comment-round">
+  <div class="comment">
+    <%= simple_format(comment.body) %>
+    <p class="comment_meta">Posted by <%= comment.user.email %></p>
+    <%= render :partial => "comments/form", :locals => {:commentable_object => comment} %>
+    <%= render :partial => "comments/comment", :collection => comment.comments %>
+  </div>
+</div>

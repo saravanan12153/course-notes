@@ -25,5 +25,11 @@
   <%= @link.subreddit_id %>
 </p>
 
+<% if current_user %>
+  <%= render :partial => 'comments/form', :locals => {:commentable_object => @link} %>
+<% end %>
+
+<%= render :partial => "comments/comment", :collection => @link.comments %>
+
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803132402) do
+ActiveRecord::Schema.define(version: 20150804145413) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "links", force: :cascade do |t|
     t.string   "url"
@@ -19,8 +28,9 @@ ActiveRecord::Schema.define(version: 20150803132402) do
     t.string   "title"
     t.integer  "user_id"
     t.integer  "subreddit_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "vote_total",   default: 0
   end
 
   create_table "subreddits", force: :cascade do |t|
@@ -48,11 +58,11 @@ ActiveRecord::Schema.define(version: 20150803132402) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "votes", force: :cascade do |t|
-    t.integer  "value"
+    t.integer  "value",      default: 0
     t.integer  "user_id"
     t.integer  "link_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

@@ -8,7 +8,7 @@
       <th>Score</th>
       <th>Upvote</th>
       <th>Downvote</th>
-      <th>Url</th>
+      <th>Comments</th>
       <th>Summary</th>
       <th>Title</th>
       <th>User</th>
@@ -18,19 +18,7 @@
   </thead>
 
   <tbody>
-    <% @links.each do |link| %>
-      <tr>
-        <%= render :partial => 'votinglinks', :locals => {:link => link} %>
-        <td><%= link.url %></td>
-        <td><%= link.summary %></td>
-        <td><%= link.title %></td>
-        <td><%= link.user_id %></td>
-        <td><%= link.subreddit_id %></td>
-        <td><%= link_to 'Show', link %></td>
-        <td><%= link_to 'Edit', edit_link_path(link) %></td>
-        <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render :partial => 'link_tr', :collection => @links %>
   </tbody>
 </table>
 
