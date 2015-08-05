@@ -4,5 +4,16 @@
 
 .comment-round {
   margin-left: 100px;
-  border: 1px solid red;
+}
+
+ul.votinglinks, ul.votinglinks li {
+  text-align:center;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.2em;
+}
+
+ul.votinglinks .disabled {
+  color: #c0c0c0;
 }

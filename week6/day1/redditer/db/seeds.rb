@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Subreddit.create!(:name => "funny")
+Subreddit.create!(:name => "awesome")
+Subreddit.create!(:name => "gifs")

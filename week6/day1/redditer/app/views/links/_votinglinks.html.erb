@@ -1,14 +1,21 @@
-<td><%= link.vote_total %></td>
-<% if current_user.upvoted?(link) %>
-  <td></td>
-  <td><%= link_to "Downvote", link_vote_path(link, current_user.vote(link), :value => -1), :method => :put %></td>
-<% elsif current_user.downvoted?(link) %>
-  <td><%= link_to "Upvote", link_vote_path(link, current_user.vote(link), :value => 1), :method => :put %></td>
-  <td></td>
-<% elsif !current_user.voted?(link) %>
-  <td><%= link_to "Upvote", link_votes_path(link, :value => 1), :method => :post %></td>
-  <td><%= link_to "Downvote", link_votes_path(link, :value => -1), :method => :post %></td>
-<% else %>
-  <td><%= link_to "Upvote", link_vote_path(link, current_user.vote(link), :value => 1), :method => :put %></td>
-  <td><%= link_to "Downvote", link_vote_path(link, current_user.vote(link), :value => -1), :method => :put %></td>
+<% if current_user %>
+  <ul class="votinglinks">
+  <% if current_user.upvoted?(link) %>
+    <li class="disabled"><i class="glyphicon glyphicon-chevron-up"></i></li>
+    <li><%= link.vote_total %></li>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-down"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => -1), :method => :put %></li>
+  <% elsif current_user.downvoted?(link) %>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-up"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => 1), :method => :put %></li>
+    <li><%= link.vote_total %></li>
+    <li class="disabled"><i class="glyphicon glyphicon-chevron-down"></i></li>
+  <% elsif !current_user.voted?(link) %>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-up"></i>'.html_safe, link_votes_path(link, :value => 1), :method => :post %></li>
+    <li><%= link.vote_total %></li>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-down"></i>'.html_safe, link_votes_path(link, :value => -1), :method => :post %></li>
+  <% else %>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-up"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => 1), :method => :put %></li>
+    <li><%= link.vote_total %></li>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-down"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => -1), :method => :put %></li>
+  <% end %>
 <% end %>
+</ul>

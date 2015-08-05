@@ -1,27 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-9">
+    <%= render :partial => 'link', :collection => @links %>
+  </div>
 
-<h1>Listing Links</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Score</th>
-      <th>Upvote</th>
-      <th>Downvote</th>
-      <th>Comments</th>
-      <th>Summary</th>
-      <th>Title</th>
-      <th>User</th>
-      <th>Subreddit</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render :partial => 'link_tr', :collection => @links %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Link', new_link_path %>
+  <div class="col-md-3">
+    <% if current_user %>
+      <%= link_to 'New Link', new_link_path, :class => "btn btn-large btn-default" %>
+    <% end %>
+  </div>
+</div>

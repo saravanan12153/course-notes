@@ -1,5 +1,7 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
+  before_action :set_subreddit_options, only: [:new, :edit, :update, :create]
 
   # GET /links
   # GET /links.json
@@ -31,10 +33,11 @@ class LinksController < ApplicationController
   # POST /links.json
   def create
     @link = Link.new(link_params)
+    @link.user = current_user
 
     respond_to do |format|
       if @link.save
-        format.html { redirect_to @link, notice: 'Link was successfully created.' }
+        format.html { redirect_to links_path, notice: 'Link was successfully created.' }
         format.json { render :show, status: :created, location: @link }
       else
         format.html { render :new }
@@ -84,6 +87,11 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:url, :summary, :title, :user_id, :subreddit_id)
+      params.require(:link).permit(:url, :summary, :title, :subreddit_id)
     end
+
+    def set_subreddit_options
+      @subreddit_options = Subreddit.all.collect{ |subreddit| [subreddit.name, subreddit.id] }
+    end
+
 end

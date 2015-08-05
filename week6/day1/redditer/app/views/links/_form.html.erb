@@ -1,4 +1,4 @@
-<%= form_for(@link) do |f| %>
+<%= bootstrap_form_for(@link) do |f| %>
   <% if @link.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
@@ -12,24 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
+    <%= f.text_field :url, :value => @link.url || "http://" %>
   </div>
   <div class="field">
-    <%= f.label :summary %><br>
     <%= f.text_area :summary %>
   </div>
   <div class="field">
-    <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :subreddit_id %><br>
-    <%= f.number_field :subreddit_id %>
+    <%= f.select :subreddit_id, options_for_select(@subreddit_options, @link.subreddit_id) %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -9,4 +9,8 @@ class Link < ActiveRecord::Base
     self.votes << Vote.new(:value => value, :user => user)
   end
 
+  def link_url
+    self.url
+  end
+
 end

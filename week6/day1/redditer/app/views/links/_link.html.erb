@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-xs-2">
+    <%= render :partial => 'votinglinks', :locals => {:link => link} %>
+  </div>
+  <div class="col-xs-10">
+    <h3><%= link_to link.title, link_redirect_path(link) %></h3>
+    <p><%= link.summary %></p>
+  </div>
+</div>

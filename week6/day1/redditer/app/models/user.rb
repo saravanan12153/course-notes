@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :votes
   has_many :comments
 
+  has_many :self_comments, :as => :commentable, :class_name => Comment
+
   def upvoted?(link)
     if vote(link) && vote(link).value == 1
       true
