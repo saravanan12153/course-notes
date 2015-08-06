@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :taggings
   resources :tags
   resources :comments
   devise_for :users

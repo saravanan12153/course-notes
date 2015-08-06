@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805144802) do
+ActiveRecord::Schema.define(version: 20150806150139) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20150805144802) do
     t.string   "commentable_type"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "root_id"
+    t.string   "root_type"
   end
 
   create_table "links", force: :cascade do |t|
@@ -37,6 +39,14 @@ ActiveRecord::Schema.define(version: 20150805144802) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "taggable_id"
+    t.integer  "tag_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "taggable_type"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -58,6 +68,9 @@ ActiveRecord::Schema.define(version: 20150805144802) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.text     "bio"
+    t.string   "username"
+    t.string   "profile_photo"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
