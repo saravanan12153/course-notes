@@ -1,11 +1,14 @@
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9" id="links_list">
     <%= render :partial => 'link', :collection => @links %>
   </div>
 
   <div class="col-md-3">
     <% if current_user %>
-      <%= link_to 'New Link', new_link_path, :class => "btn btn-large btn-default" %>
+      <button type="button" id="new_link_modal" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newLink">
+        New link
+      </button>
     <% end %>
+    <%= render :partial => 'links/form', :layout => 'shared/modal', :locals => {:title => "A new link", :id => "newLink"} %>
   </div>
 </div>

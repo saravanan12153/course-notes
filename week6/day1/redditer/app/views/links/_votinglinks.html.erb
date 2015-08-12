@@ -1,21 +1,21 @@
 <% if current_user %>
-  <ul class="votinglinks">
+  <ul class="votinglinks" id="link-<%= link.id %>">
   <% if current_user.upvoted?(link) %>
     <li class="disabled"><i class="glyphicon glyphicon-chevron-up"></i></li>
     <li><%= link.vote_total %></li>
-    <li><%= link_to '<i class="glyphicon glyphicon-chevron-down"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => -1), :method => :put %></li>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-down"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => -1), :method => :put, :remote => true %></li>
   <% elsif current_user.downvoted?(link) %>
-    <li><%= link_to '<i class="glyphicon glyphicon-chevron-up"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => 1), :method => :put %></li>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-up"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => 1), :method => :put, :remote => true %></li>
     <li><%= link.vote_total %></li>
     <li class="disabled"><i class="glyphicon glyphicon-chevron-down"></i></li>
   <% elsif !current_user.voted?(link) %>
-    <li><%= link_to '<i class="glyphicon glyphicon-chevron-up"></i>'.html_safe, link_votes_path(link, :value => 1), :method => :post %></li>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-up"></i>'.html_safe, link_votes_path(link, :value => 1), :method => :post, :remote => true %></li>
     <li><%= link.vote_total %></li>
-    <li><%= link_to '<i class="glyphicon glyphicon-chevron-down"></i>'.html_safe, link_votes_path(link, :value => -1), :method => :post %></li>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-down"></i>'.html_safe, link_votes_path(link, :value => -1), :method => :post, :remote => true %></li>
   <% else %>
-    <li><%= link_to '<i class="glyphicon glyphicon-chevron-up"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => 1), :method => :put %></li>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-up"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => 1), :method => :put, :remote => true %></li>
     <li><%= link.vote_total %></li>
-    <li><%= link_to '<i class="glyphicon glyphicon-chevron-down"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => -1), :method => :put %></li>
+    <li><%= link_to '<i class="glyphicon glyphicon-chevron-down"></i>'.html_safe, link_vote_path(link, current_user.vote(link), :value => -1), :method => :put, :remote => true %></li>
   <% end %>
 <% end %>
 </ul>

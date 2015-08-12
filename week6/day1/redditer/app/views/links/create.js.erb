@@ -1,0 +1,9 @@
+if($("#ajax-flashes p").length > 0){
+  $("#ajax-flashes").fadeOut();
+}
+$("#ajax-flashes p").remove();
+$("#newLink").modal('hide');
+$("#links_list").prepend("<%= escape_javascript(render :partial => "link", :locals => {:link => @link}) %>");
+$("#ajax-flashes").addClass("alert-success");
+$("#ajax-flashes").append("<p>Wooooooooo! New link! _Yes_!</p>");
+$("#ajax-flashes").fadeIn();

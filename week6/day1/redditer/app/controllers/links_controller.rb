@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy]
-  before_action :set_subreddit_options, only: [:new, :edit, :update, :create]
+  before_action :set_subreddit_options, only: [:index, :new, :edit, :update, :create]
 
   # GET /links
   # GET /links.json
@@ -12,6 +12,8 @@ class LinksController < ApplicationController
     else
       @links = Link.order("vote_total DESC")
     end
+
+    @link = Link.new
   end
 
   # GET /links/1
@@ -39,9 +41,11 @@ class LinksController < ApplicationController
       if @link.save
         format.html { redirect_to links_path, notice: 'Link was successfully created.' }
         format.json { render :show, status: :created, location: @link }
+        format.js {}
       else
         format.html { render :new }
         format.json { render json: @link.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
