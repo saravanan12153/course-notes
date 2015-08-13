@@ -12,7 +12,7 @@ class LinksController < ApplicationController
     else
       @links = Link.order("vote_total DESC")
     end
-
+    # Rails.logger.info format.inspect
     @link = Link.new
   end
 
@@ -25,6 +25,10 @@ class LinksController < ApplicationController
   # GET /links/new
   def new
     @link = Link.new
+    respond_to do |format|
+      format.html {}
+      format.htm {layout false}
+    end
   end
 
   # GET /links/1/edit
