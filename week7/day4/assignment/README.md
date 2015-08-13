@@ -36,7 +36,7 @@ It's time to really flex our newly-formed JavaScript muscles and build a single 
 
 ### Hard Mode
 
-* Logged in users can upvote and downvote gifs and the list is sorted by their overall score. The votes display in the grid, but the actual voting happens in the modal. Once I vote, the score is auto-updated in the modal and the grid (but don't worry about re-sorting the grid)
+* Logged in users can upvote and downvote gifs and the list is sorted by their overall score. The votes display in the grid, but the actual voting happens in the modal. Once I vote, the score is auto-updated in the modal and the grid (but don't worry about re-sorting the grid). A hint: Load the modal dynamically, that way a user can log in and be able to vote and you don't have to reload a ton of voting links when the user logs in.
 * Gifs can be tagged. If I click a tag name, the grid just shows gifs that match that tag
 * If I click on a user, the grid is now just the photos added by that user
 
