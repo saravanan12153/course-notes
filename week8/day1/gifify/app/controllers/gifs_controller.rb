@@ -36,7 +36,7 @@ class GifsController < ApplicationController
       tags.each do |tag|
         @gif.tags << Tag.new(:name => tag)
       end
-      @gifs = Gif.order(:total_score => :desc).all
+      @gifs = Gif.order(:total_score => :desc).all.reject{|gif| gif.id == @gif.id}
       @gifs.unshift(@gif)
       respond_to do |format|
         format.js {}

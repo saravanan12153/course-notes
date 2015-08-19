@@ -13,7 +13,7 @@ development:
   adapter: postgresql
   pool: 5
   timeout: 50000
-  database: gifdb
+  database: gif2db
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
