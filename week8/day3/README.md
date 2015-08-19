@@ -1,6 +1,6 @@
 # Week 8, Day 3
 
-Today,w e talked a bunch more about testing, specifically integration testing.
+Today, we talked a bunch more about testing, specifically integration testing.
 
 We also talked about Amazon's S3 service and refile.
 
