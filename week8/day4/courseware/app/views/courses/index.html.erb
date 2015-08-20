@@ -1,0 +1,6 @@
+<% @courses.each do |course| %>
+  <div>
+    <h1><%= course.title %></h1>
+    <%= render 'payola/transactions/checkout', sellable: course %>
+  </div>
+<% end %>

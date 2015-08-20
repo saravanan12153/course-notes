@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  database: courseware_dev
+
+test:
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  database: courseware_test

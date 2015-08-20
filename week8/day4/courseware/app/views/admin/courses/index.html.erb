@@ -1,0 +1,7 @@
+<div class="container">
+<% @courses.each do |course| %>
+  <div class="row">
+    <%= course.title %> by <%= course.author.email %>
+  </div>
+<% end %>
+</div>
