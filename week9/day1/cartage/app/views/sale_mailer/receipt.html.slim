@@ -1,0 +1,20 @@
+h2 Thank you for your purchase
+h6 Below is a receipt for your records
+table
+  - @sale.product.line_items.each do |line_item|
+    tr
+      td
+        = line_item.product.name
+      td
+        = line_item.product.description
+      td
+        = line_item.quantity
+      td
+        = number_to_currency(line_item.total_price.to_f/100.0)
+  tr#totals
+    td colspan=2
+      strong TOTAL
+    td
+      = @sale.product.total_quantity
+    td
+      = number_to_currency(@sale.product.price.to_f/100.0)

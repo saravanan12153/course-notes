@@ -1,0 +1,21 @@
+#cart
+  h2 Your Cart
+  table
+    - @cart.line_items.each do |line_item|
+      tr
+        td
+          = line_item.product.name
+        td
+          = line_item.product.description
+        td
+          = line_item.quantity
+        td
+          = number_to_currency(line_item.total_price.to_f/100.0)
+    tr#totals
+      td colspan=2
+        strong TOTAL
+      td
+        = @cart.total_quantity
+      td
+        = number_to_currency(@cart.price.to_f/100.0)
+  = render 'payola/transactions/checkout', sellable: @cart
