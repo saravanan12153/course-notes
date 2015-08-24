@@ -1,6 +1,7 @@
 # Week 9(!), Day 1: Wonder Woman
 
 ![](http://static.comicvine.com/uploads/original/11/118332/3597832-ww+b%26b+gif+2.gif)
+
 (Get it: Amazonian ... Wonder Woman? I'll see myself out ...)
 
 ## Description
