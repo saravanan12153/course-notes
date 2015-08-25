@@ -12,47 +12,48 @@ I have the frontend all laid to use your API. Here's what I'm expecting (note, t
 
 ```json
 {
-  'notes':
-    [
-      {
-        'title' : 'My awesome post',
-        'body' : 'My awesome body of a post',
-        'created_at' : <timestamp>,
-        'updated_at' : <timestamp>,
-        'tags' : [
-          {'name' : 'awesome'},
-          {'name' : 'funny'},
-          {'name' : 'spiffy'}
-        ]
-      },
-      {
-        'title' : 'My awesome second post',
-        'body' : 'My awesome body of a second post',
-        'created_at' : <timestamp>,
-        'updated_at' : <timestamp>,
-        'tags' : [
-          {'name' : 'not_so_awesome'},
-          {'name' : 'not_funny'},
-          {'name' : 'not_at_all_spiffy'}
-        ]
-      }, ..., ..., ...
-    ]
+  "notes" : [
+    {
+      "title" : "My awesome post",
+      "body" : "My awesome body of a post",
+      "created_at" : "<timestamp>",
+      "updated_at" : "<timestamp>",
+      "tags" : [
+        { "name" : "awesome" },
+        { "name" : "funny" },
+        { "name" : "spiffy" }
+      ]
+    },
+    {
+      "title" : "My awesome second post",
+      "body" : "My awesome body of a second post",
+      "created_at" : "<timestamp>",
+      "updated_at" : "<timestamp>",
+      "tags" : [
+        { "name" : "not_so_awesome" },
+        { "name" : "not_funny" },
+        { "name" : "not_at_all_spiffy" }
+      ]
+    }
+  ]
 }
 ```
 
-`POST /api/notes -d {'title' : 'My created post', 'body' : 'My created body', 'tags' : 'api, machine, first'}`
+`POST /api/notes -d {"title" : "My created post", "body" : "My created body", "tags" : "api, machine, first"}`
 
 ```json
-{ 'note':
-  'title' : 'My created post',
-  'body' : 'My created body',
-  'created_at' : <timestamp>,
-  'updated_at' : <timestamp>,
-  'tags' : [
-    {'name' : 'api'},
-    {'name' : 'machine'},
-    {'name' : 'first'}
-  ]
+{
+  "note" : {
+    "title" : "My created post",
+    "body" : "My created body",
+    "created_at" : "<timestamp>",
+    "updated_at" : "<timestamp>",
+    "tags" : [
+      { "name" : "api" },
+      { "name" : "machine" },
+      { "name" : "first" }
+    ]
+  }
 }
 ```
 
@@ -61,35 +62,34 @@ If I try to create a note without a title or body, I should get back a JSON-form
 `GET /api/notes/tag/funny`
 
 ```json
-{ 'tag' :
-  {
-    'name' : 'funny'
+{
+  "tag" : {
+    "name" : "funny"
   },
-  'notes':
-    [
-      {
-        'title' : 'My awesome post',
-        'body' : 'My awesome body of a post',
-        'created_at' : <timestamp>,
-        'updated_at' : <timestamp>,
-        'tags' : [
-          {'name' : 'awesome'},
-          {'name' : 'funny'},
-          {'name' : 'spiffy'}
-        ]
-      },
-      {
-        'title' : 'My awesome second post',
-        'body' : 'My awesome body of a second post',
-        'created_at' : <timestamp>,
-        'updated_at' : <timestamp>,
-        'tags' : [
-          {'name' : 'not_so_awesome'},
-          {'name' : 'funny'},
-          {'name' : 'not_at_all_spiffy'}
-        ]
-      }, ..., ..., ...
-    ]
+  "notes" : [
+    {
+      "title" : "My awesome post",
+      "body" : "My awesome body of a post",
+      "created_at" : "<timestamp>",
+      "updated_at" : "<timestamp>",
+      "tags" : [
+        { "name" : "awesome" },
+        { "name" : "funny" },
+        { "name" : "spiffy" }
+      ]
+    },
+    {
+      "title" : "My awesome second post",
+      "body" : "My awesome body of a second post",
+      "created_at" : "<timestamp>",
+      "updated_at" : "<timestamp>",
+      "tags" : [
+        { "name" : "not_so_awesome" },
+        { "name" : "funny" },
+        { "name" : "not_at_all_spiffy" }
+      ]
+    }
+  ]
 }
 ```
 
@@ -114,13 +114,13 @@ Jacques had some nice-to-have requests.
 
 * I'd like to be able to create a simple user authenticatable and identifiable simply by an api_token.
   Something like:
-  `POST /api/users/create` {'email' : 'whatever@example.com'}`
+  `POST /api/users/create` {"email" : "whatever@example.com"}`
 
   ```json
-    {'user':
-      {
-        'email' : 'whatever@example.com',
-        'api_token' : <token>
+    {
+      "user" : {
+        "email" : "whatever@example.com",
+        "api_token" : "<token>"
       }
     }
   ```
