@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'simple_craps'
+
+SimpleCraps::GamePlay.play
